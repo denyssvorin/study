@@ -1,27 +1,19 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
-    public static void main(String [] args) {
-        System.out.println("IsLeapYear:"+ isLeapYear(4040) );
-    }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    public static int sumOfDigits(int number) {
-        int sum = 0;
-        if (number>0 && number<1000) {
-            while (number != 0) {
-                sum = sum + number % 10;
-                number = number / 10;
-            }
-        } else {
-            System.out.println("You can`t calculate this number. Number must consist of three numbers and be positive");
+        System.out.println("Please enter your command:");
+        String command = br.readLine();
+        String[] arrayOfWords = command.split(" ");
+
+        for (String word : arrayOfWords) {
+            System.out.print(word + " ");
         }
-        return sum;
-    }
-
-    public static boolean isLeapYear(int year) {
-        boolean isLeap = false;
-        if (year % 100 == 0 && year % 400 != 0) return isLeap;
-        if (year % 4 == 0) isLeap = true;
-        return isLeap;
     }
 }
