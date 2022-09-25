@@ -2,7 +2,7 @@ package main;
 
 public class Main {
     public static void main(String [] args) {
-        System.out.println(sumOfDigits(52));
+        System.out.println("IsLeapYear:"+ isLeapYear(4040) );
     }
 
     public static int sumOfDigits(int number) {
@@ -18,4 +18,10 @@ public class Main {
         return sum;
     }
 
+    public static boolean isLeapYear(int year) {
+        boolean isLeap = false;
+        if (year % 100 == 0 && year % 400 != 0) return isLeap;
+        if (year % 4 == 0) isLeap = true;
+        return isLeap;
+    }
 }
